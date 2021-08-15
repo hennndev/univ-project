@@ -1,0 +1,439 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --primary: #FF616D;
+    --secondary: #2C2E43;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+
+/* HEADER */
+.header {
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url('./images/banner.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 40px;
+    background: transparent;
+    transition: all .5s ease;
+}
+nav.sticky {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: var(--secondary);
+    z-index: 98;
+}
+nav .logo {
+    width: 150px;
+}
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li {
+    padding: 8px 5px;
+    display: inline-block;
+    position: relative;
+}
+.nav-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    margin: auto;
+    height: 2px;
+    background: var(--primary);
+    display: block;
+    transition: all 0.5s ease;
+}
+.nav-links ul li:hover::after {
+    width: 100%;
+}
+.menu {
+    display: none;
+    cursor: pointer;
+}
+.menu div{ 
+    width: 20px;
+    height: 2px;
+    background: #fff;
+    margin-bottom: 5px;
+}
+
+
+
+.text-header {
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+.text-header h1 {
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.text-header button {
+    border: none;
+    outline: none;
+    padding: 12px 34px;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: var(--primary);
+    color: #fff;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    transition: all .3s ease;
+    font-size: 14px;
+}
+.text-header button:hover {
+    background: transparent;
+    border-color: var(--primary);
+}
+
+/* UI ROW */
+.row {
+    margin-top: 5%;
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+}
+
+
+/* COURSES */
+.courses {
+    width: 80%;
+    padding-top: 100px;
+    text-align: center;
+    margin: auto;
+}
+.courses h1 {
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--secondary);
+}
+.courses p {
+    color: #777;
+    letter-spacing: 0.5px;
+    line-height: 22px;
+    font-size: 14px;
+}
+
+.course-col {
+    flex-basis: 31%;
+    background: #fff3f3;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 5%;
+    transition: all 0.2s ease;
+}
+.course-col h3 {
+    color: var(--secondary);
+    margin-bottom: 10px;
+}
+.course-col:hover {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    cursor: pointer;
+}
+
+
+/* CAMPUS */
+.campus {
+    padding-top: 50px;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    color: var(--secondary);
+}
+.campus h1 {
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--secondary);
+}
+.campus p {
+    color: #777;
+    letter-spacing: 0.5px;
+    line-height: 22px;
+    font-size: 14px;
+}
+.campus-col {
+    flex-basis: 31%;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 5%;
+    border-radius: 10px;
+}
+.campus-col:hover img {
+    transform: scale(1.05);
+}
+.campus-col img {
+    width: 100%;
+    transition: all 0.6s ease-out;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.campus-col .layer {
+    bottom: -100%;
+    position: absolute; 
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: all 0.5s ease-out;
+    opacity: 0;
+}
+.campus-col:hover .layer {
+    bottom: 0;
+    opacity: 1;
+}
+.campus-col .layer button {
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    margin-top: 10px;
+    background: var(--primary);
+    color: #fff;
+    padding: 10px;
+    font-size: 13px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+.campus-col .layer button:hover {
+    background: transparent;
+    border-color: var(--primary);
+}
+
+
+
+/* FACILITIES */
+.facilities {
+    padding-top: 50px;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    color: var(--secondary);
+}
+.facilities h1 {
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--secondary);
+}
+.facilities p {
+    color: #777;
+    letter-spacing: 0.5px;
+    line-height: 22px;
+    font-size: 14px;
+}
+.facility-col {
+    flex-basis: 31%;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 7%;
+}
+.facility-col img {
+    width: 100%;
+    border-radius: 6px;
+}
+.facility-detail {
+    margin-top: 5px;
+}
+.facility-detail p {
+    color: #777;
+    font-size: 14px;
+    text-align: left;
+    margin-top: 6px;
+}
+
+
+/* TESTIMONIALS */
+.testimonials {
+    padding-top: 50px;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    color: var(--secondary);
+}
+.testimonials h1 {
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--secondary);
+}
+.testimonials p {
+    color: #777;
+    letter-spacing: 0.5px;
+    line-height: 22px;
+    font-size: 14px;
+}
+.testimonial-col {
+    flex-basis: 44%;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 7%;
+    display: flex;
+    background: #fff3f3;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.testimonial-col:hover {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.testimonial-col img {
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 30px;
+}
+.testimonial-col-detail {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.testimonial-col-detail p {
+    color: #777;
+    font-size: 12.5px;
+}
+.testimonial-col-detail h3 {
+    text-align: right;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+
+/* CTA */
+.cta {
+    padding-top: 50px;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    color: var(--secondary);
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/banner2.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 30px;
+    margin: 100px auto;
+    color: #fff;
+}
+.cta h1 {
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    
+}
+.cta button{
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    padding: 15px 25px;
+    background-color: var(--primary);
+    font-size: 14px;
+    cursor: pointer;
+    color: #fff;
+    margin-top: 10px;
+    transition: all 0.4s ease-in-out;
+}
+.cta button:hover {
+    background: #FF3D68;
+}
+
+@media(max-width: 700px) {
+    nav {
+        align-items: center;
+        padding: 6px 20px;
+    }
+    nav .logo {
+        width: 120px;
+    }
+    .nav-links {
+        position: fixed;
+        top: -100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        width: 100%;
+        text-align: center;
+        background: #fff;
+        z-index: 99;
+        transition: all 0.5s ease;
+        opacity: 0;
+    }
+    .show {
+        top: 50%;
+        opacity: 1;
+    }
+    .nav-links ul {
+        margin-top: 70px;
+    }
+    .nav-links ul li {
+        display: block;
+    }
+    .nav-links ul li a {
+        color: var(--secondary);
+    }
+    .menu {
+        display: block;
+        z-index: 999;
+    }
+    .menu .mobile {
+        background: var(--secondary);
+    }
+
+    .text-header {
+        width: 90%;
+    }
+    .text-header h1,
+    .courses h1,
+    .campus h1,
+    .facilities h1,
+    .testimonials h1,
+    .cta h1 {
+        font-size: 23px;
+    }
+    .text-header p {
+        font-weight: 300;
+        font-size: 14px;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .courses h1 {
+        font-size: 28px;
+    }
+   
+}
